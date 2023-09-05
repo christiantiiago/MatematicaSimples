@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Calculos</title>
+    <style>
+        * {
+            text-decoration: none;
+
+        }
+
+        h1,
+        a,
+        p,
+        span
+        {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        header {
+            background: rgb(252, 69, 69);
+            background: linear-gradient(90deg, rgba(252, 69, 69, 1) 0%, rgba(221, 8, 20, 1) 0%, rgba(224, 38, 6, 1) 0%, rgba(150, 10, 41, 1) 0%, rgba(195, 71, 40, 1) 21%, rgba(230, 135, 0, 1) 71%);
+            padding: 5px;
+        }
+
+        header nav {
+            padding: 15px;
+            background-color: rgb(228, 226, 236);
+            box-shadow:4px 5px 10px 8px black;
+        }
+
+        main {
+            display: flex;
+            height: 70vh;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            background: rgb(252, 69, 69);
+            background: linear-gradient(90deg, rgba(252, 69, 69, 1) 0%, rgba(221, 8, 20, 1) 0%, rgba(224, 38, 6, 1) 0%, rgba(150, 10, 41, 1) 0%, rgba(195, 71, 40, 1) 53%, rgba(230, 104, 0, 1) 99%);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            padding: 30px;
+            background-color: rgb(231, 231, 238);
+            border-radius: 15px;
+            box-shadow: 4px 6px 8px 3px;
+            border: 1px solid;
+        }
+
+        form input {
+            padding: 10px;
+            font-weight: bold;
+            outline: none;
+            text-align: right;
+            width: 90;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        div.options {
+            display: flex;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        div.options span {
+            padding: 20px;
+            width: 20px;
+            background-color: rgb(25, 27, 27);
+            border: 1px solid rgb(44, 40, 48);
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+        }
+
+        div.options span:hover {
+            background-color: darkgray;
+        }
+
+        div.options span.limpa {
+            background-color: brown;
+            color: rgb(20, 20, 20);
+            width: 206px;
+            border-radius: 5px;
+            border: 1px solid;
+        }
+
+        div.options span.limpa:hover {
+            background-color: rgb(196, 123, 123);
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+
+        }
+
+        span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        nav li {
+            text-decoration: none;
+            list-style: none;
+
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        nav ul li a:hover {
+            color: rgb(233, 9, 9);
+        }
+
+        footer {
+            padding: 20px;
+            background-color: rgb(228, 226, 236);
+            box-shadow:3px 5px 10px 8px black;
+        }
+
+        footer ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        footer ul li a:hover {
+            color: brown;
+        }
+
+        footer p {
+            display: flex;
+            justify-content: center;
+            margin-left: 45px;
+            color: black;
+        }
+
+        footer p a {
+            color: black;
+
+        }
+
+        footer p a:hover {
+            color: rgb(233, 9, 9);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Matematica <span>Simples</span></h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Divisão</a></li>
+                <li><a href="#">Mutiplicação</a></li>
+                <li><a href="#">Subtração</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form name="calculadora">
+            <input type="text" name="expressao" placeholder="Resutado" readonly />
+
+            <div class="options">
+                <span>/</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>*</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>-</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>+</span>
+                <span>0</span>
+                <span>,</span>
+                <span>=</span>
+                <span class="limpa">LIMPA</span>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+        </ul>
+        <p> Todos os Direitos reservados <a href="#"> Christian OLiveira &COPY;</a> </p>
+    </footer>
+    <script>
+        document.querySelectorAll('form span').forEach(item => {
+            item.addEventListener('click', (e) => {
+                addVall(item.innerHTML);
+            })
+        });
+        function addVall(valor) {
+            if (valor == 'LIMPA')
+                document.calculadora.expressao.value = '';
+            else if (valor == '=')
+                document.calculadora.expressao.value = eval(document.calculadora.expressao.value.replaceAll(',', '.')).toString().replaceAll('.', ',');
+            else
+                document.calculadora.expressao.value += valor;
+        }
+    </script>
+</body>
+
+</html>
